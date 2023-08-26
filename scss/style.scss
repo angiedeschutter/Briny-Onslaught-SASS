@@ -1,0 +1,106 @@
+@use 'utilities';
+@use 'config';
+
+
+
+body {
+    background-color: config.$main-color;
+    font-family: Arcade_Classic;
+}
+
+#heading {
+    h1 {
+        color: utilities.text-color();
+        font-family: Arcade_Classic;
+        font-size: config.$font-size-bg;
+        display: inline-block
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+
+    #background {
+        position: relative;
+        z-index: -1;
+        height: config.$height-1;     
+    }
+
+    #controls-container{
+        @include utilities.set-text-shadow(config.$main-color);
+
+        width:250px;
+        height: config.$height-2;
+        border-style: double;
+        display: inline-block;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+        background-color: config.$gray-2;
+        font-family: Arcade_Classic;
+        text-align: center;
+        border-style: double;
+        color:utilities.text-color();;
+       
+    }
+
+    #timeText{
+        margin-bottom: 0px;
+        font-size: config.$font-size-md;
+    }
+    
+    #scoreCount, #score{
+        font-size: config.$font-size-bg;
+        margin:0;
+    }
+    
+    #timer{
+        margin-top: 0px;
+        font-size: config.$font-size-md;
+    }
+    
+    #startMessage{
+        font-size: config.$font-size-sm;
+    }
+    
+}
+
+#backgroundDiv{
+    div{
+        @include utilities.set-animation;
+        @include utilities.set-padding;
+    position: absolute;
+    color:config.$main-color;
+    top: 120px;
+    left: 0;
+    background-color: config.$bg-one;  
+    opacity: .8;
+    font-size:60px;
+    z-index:1;
+    text-shadow: 2px 2px config.$secondary-color;
+    text-align: center;
+    border:double;
+}
+}
+
+/*This controls the message animation when the game is over and flashes between gray and black every second*/
+@keyframes gameOver {
+    from {color: config.$main-color;}
+    to {color: config.$gray;}
+  }
+
+  /*This styles the buttons for start and replay*/
+  button{
+    border-radius: utilities.btn-radius(true);
+    border: 2px solid config.$main-color;
+    font-size: config.$font-size-md;
+    font-family: Arcade_Classic;
+    &:hover {
+        opacity:.5
+    };
+    &:active{
+        color: yellow;
+    }
+  }
+

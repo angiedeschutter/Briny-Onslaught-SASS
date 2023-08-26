@@ -1,0 +1,99 @@
+@font-face {
+  font-family: Arcade_Classic;
+  src: url("../assets/ARCADECLASSIC.TTF");
+}
+body {
+  background-color: black;
+  font-family: Arcade_Classic;
+}
+
+#heading h1 {
+  color: white;
+  font-family: Arcade_Classic;
+  font-size: 3em;
+  display: inline-block;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.container #background {
+  position: relative;
+  z-index: -1;
+  height: 450px;
+}
+.container #controls-container {
+  text-shadow: 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+  width: 250px;
+  height: 445px;
+  border-style: double;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  background-color: #949da7;
+  font-family: Arcade_Classic;
+  text-align: center;
+  border-style: double;
+  color: white;
+}
+.container #timeText {
+  margin-bottom: 0px;
+  font-size: 1.75em;
+}
+.container #scoreCount, .container #score {
+  font-size: 3em;
+  margin: 0;
+}
+.container #timer {
+  margin-top: 0px;
+  font-size: 1.75em;
+}
+.container #startMessage {
+  font-size: 1.5em;
+}
+
+#backgroundDiv div {
+  animation-name: gameOver;
+  animation-duration: 1s;
+  animation-iteration-count: 30;
+  padding-top: 160px;
+  padding-bottom: 165px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  color: black;
+  top: 120px;
+  left: 0;
+  background-color: azure;
+  opacity: 0.8;
+  font-size: 60px;
+  z-index: 1;
+  text-shadow: 2px 2px #FFFF00;
+  text-align: center;
+  border: double;
+}
+
+/*This controls the message animation when the game is over and flashes between gray and black every second*/
+@keyframes gameOver {
+  from {
+    color: black;
+  }
+  to {
+    color: #949da7;
+  }
+}
+/*This styles the buttons for start and replay*/
+button {
+  border-radius: 12px;
+  border: 2px solid black;
+  font-size: 1.75em;
+  font-family: Arcade_Classic;
+}
+button:hover {
+  opacity: 0.5;
+}
+button:active {
+  color: yellow;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+$Arcade_Classic-path:'../assets/ARCADECLASSIC.TTF';
+
+@font-face {
+    font-family:Arcade_Classic;
+    src:url("#{$Arcade_Classic-path}");
+}
+
+@mixin set-text-shadow($color){
+    text-shadow:0 2px $color, 0 0 2px $color, 0 0 2px $color, 0 0 2px $color;
+}  
+
+@mixin set-animation{
+    animation-name: gameOver;
+    animation-duration: 1s;
+    animation-iteration-count: 30;
+}
+
+@mixin set-padding{
+    padding-top: 160px;
+    padding-bottom: 165px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+@function text-color(){
+    @if (background-color)=='white'{
+        @return black;
+    } @else{
+        @return white;
+    }
+}
+
+@function btn-radius($rounded:false){
+    @if $rounded==true{
+        @return 12px;
+    } @else {
+        @warn 'this is button is square';
+        @return 0
+    }
+    
+}
+
